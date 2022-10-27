@@ -91,6 +91,7 @@ WSGI_APPLICATION = "project.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
@@ -107,6 +108,7 @@ DATABASES = {
 }
 
 DATABASE_URL = env("DATABASE_URL")
+
 
 if DATABASE_URL:
     db_from_env = dj_database_url.config(default=DATABASE_URL)

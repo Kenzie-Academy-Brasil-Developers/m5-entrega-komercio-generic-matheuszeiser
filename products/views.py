@@ -3,13 +3,13 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from .models import Product
-from .permissions import IsProductOwner, IsSeller
+from .permissions import IsProductOwnerOrReadOnly, IsSellerOrReadOnly
 from .serializers import ListProductSerializer, ProductSerializer
 
 
 class ListCreateProductView(generics.ListCreateAPIView):
     authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticatedOrReadOnly, IsSeller]
+    permission_classes = [IsSellerOrReadOnly]
 
     queryset = Product.objects.all()
     # serializer_class = ProductSerializer
@@ -25,7 +25,7 @@ class ListCreateProductView(generics.ListCreateAPIView):
 
 class UpdateRetrieveProductView(generics.RetrieveUpdateAPIView):
     authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticatedOrReadOnly, IsProductOwner]
+    permission_classes = [IsProductOwnerOrReadOnly]
 
     queryset = Product.objects.all()
     serializer_class = ProductSerializer

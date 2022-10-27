@@ -1,0 +1,23 @@
+[
+    {
+        "model": "products.product", 
+        "pk": "a119c0b8-1b79-45c0-b0c4-ec42a307c797", 
+        "fields": {
+                "description": "Televisao", 
+                "price": "500.10",
+                "quantity": 25,
+                "is_active": true,
+                "seller": "dc24b629-9d73-4a80-8e7f-1e566e447aa8"
+        }
+    }, {
+        "model": "products.product",
+        "pk": "ef87fd64-243a-4e80-919b-6ee29220f4a8",
+        "fields": {
+                "description": "Smartband XYZ 3.0", 
+                "price": "100.99", 
+                "quantity": 15, 
+                "is_active": true, 
+                "seller": "dc24b629-9d73-4a80-8e7f-1e566e447aa8"
+        }
+    }
+]

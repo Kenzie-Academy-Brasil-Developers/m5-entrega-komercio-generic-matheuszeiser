@@ -30,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG")
+DEBUG = True
 
 
 ALLOWED_HOSTS = [
@@ -95,11 +95,16 @@ WSGI_APPLICATION = "project.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.getenv("DB_NAME"),
-        "USER": os.getenv("DB_USER"),
-        "PASSWORD": os.getenv("DB_PASSWORD"),
-        "HOST": "127.0.0.1",
+        "NAME": os.getenv("POSTGRES_DB"),
+        "USER": os.getenv("POSTGRES_USER"),
+        "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
+        # "HOST": "127.0.0.1",
+        # "PORT": 5432,
+        # Docker Compose
+        "HOST": "db",
         "PORT": 5432,
+        # Porta de fora para o postgres do container
+        # "PORT": 5433,
     },
     "sqlite3": {
         "ENGINE": "django.db.backends.sqlite3",

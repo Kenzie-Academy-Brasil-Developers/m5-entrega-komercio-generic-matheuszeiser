@@ -59,7 +59,6 @@ tzdata==2022.5
 uritemplate==4.1.1
 urllib3==1.26.12
 uuid==1.30
-waitress==2.1.2
 wcwidth==0.2.5
 wrapt==1.14.1
 yapf==0.32.0
